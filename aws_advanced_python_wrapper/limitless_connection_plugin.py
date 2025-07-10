@@ -417,7 +417,7 @@ class LimitlessRouterService:
 
             try:
                 selected_host_info = self._plugin_service.get_host_info_by_strategy(
-                    HostRole.WRITER, "weighted_random", context.get_limitless_routers())
+                    HostRole.WRITER, "highest_weight", context.get_limitless_routers())
                 logger.debug("LimitlessRouterServiceImpl.SelectedHostForRetry",
                              "None" if selected_host_info is None else selected_host_info.host)
                 if selected_host_info is None:
